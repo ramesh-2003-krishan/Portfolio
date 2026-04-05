@@ -6,9 +6,12 @@
 }
 
 body {
-  background: linear-gradient(135deg, #0a0a1a 0%, #1a0033 50%, #0a0a1a 100%);
+  background: #050505;
   color: white;
   overflow-x: hidden;
+  background-image: radial-gradient(circle at top left, rgba(97, 218, 251, 0.06), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(255, 0, 110, 0.05), transparent 30%),
+    linear-gradient(180deg, rgba(10, 10, 10, 1), rgba(5, 5, 5, 1));
 }
 
 /* Navbar */
@@ -78,18 +81,18 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, rgba(10, 10, 26, 0.3) 0%, rgba(26, 0, 51, 0.5) 100%);
+  background: #060606;
   overflow: hidden;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
+  top: -35%;
   right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(97, 218, 251, 0.1) 0%, transparent 70%);
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.08), transparent 70%);
   animation: float 6s ease-in-out infinite;
   z-index: 0;
 }
@@ -98,10 +101,10 @@ body {
   content: '';
   position: absolute;
   bottom: -20%;
-  left: -5%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(255, 0, 110, 0.05) 0%, transparent 70%);
+  left: -10%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.05), transparent 70%);
   animation: float 8s ease-in-out infinite reverse;
   z-index: 0;
 }
@@ -110,15 +113,16 @@ body {
 .title {
   position: absolute;
   top: 5px;
-  font-size: 175px;
+  font-size: 160px;
   font-weight: 900;
   letter-spacing: -2px;
+  white-space: nowrap;
   background: linear-gradient(135deg, #61dafb 0%, #ff006e 50%, #61dafb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 30px rgba(97, 218, 251, 0.2);
-  animation: bounceIn 1s ease-out, glow 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  animation: none;
   z-index: 1;
 }
 
@@ -126,13 +130,10 @@ body {
 .profile {
   position: absolute;
   left: 550px;
-  top: 120px;
+  top: 130px;
   width: 300px;
   z-index: 2;
-  border-radius: 50%;
-  box-shadow: 0 0 40px rgba(97, 218, 251, 0.4), 0 0 80px rgba(255, 0, 110, 0.2);
-  animation: profilePulse 3s ease-in-out infinite;
-  border: 2px solid rgba(97, 218, 251, 0.3);
+  opacity: 0.8;
 }
 
 .left-text {
@@ -161,7 +162,9 @@ body {
   font-size: 48px;
   font-weight: 700;
   z-index: 2;
-  color: #61dafb;
+  background: linear-gradient(135deg, #ff006e, #61dafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .left-text h2.ai:hover {
@@ -184,12 +187,14 @@ body {
 }
 
 .left-text h2.ml {
-  top: -6px;
-  left: 110px;
+  top: 44px;
+  left: 80px;
   font-size: 50px;
   font-weight: 700;
   z-index: 2;
-  color: #61dafb;
+   background: linear-gradient(135deg, #ff006e, #61dafb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .left-text h2.ml:hover {
@@ -198,9 +203,9 @@ body {
 }
 
 .left-text p.ent {
-  top: 70px;
+  top: 100px;
   left: 4px;
-  font-size: 28px;
+  font-size: 20px;
   font-style: italic;
   color: rgba(255, 255, 255, 0.8);
 }
