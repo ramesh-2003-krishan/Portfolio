@@ -138,8 +138,8 @@ body {
 
 .left-text {
   position: absolute;
-  left: 100px;
-  bottom: 80px;
+  left: 200px;
+  bottom: 40px;
   width: 240px;
   height: 180px;
   animation: slideInLeft 0.8s ease-out;
@@ -203,8 +203,8 @@ body {
 }
 
 .left-text p.ent {
-  top: 100px;
-  left: 4px;
+  top: 90px;
+  left: 50px;
   font-size: 20px;
   font-style: italic;
   color: rgba(255, 255, 255, 0.8);
