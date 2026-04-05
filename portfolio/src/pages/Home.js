@@ -15,6 +15,7 @@ export default function Home() {
       </nav>
 
       <section className="hero">
+        
         <h1 className="title">HI, I'M RAMESH</h1>
 
         <div className="left-text">
