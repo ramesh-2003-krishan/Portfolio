@@ -21,10 +21,27 @@ body {
   border-radius: 15px;
 }
 
+.nav-left {
+  font-size: 24px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-left:hover {
+  color: #61dafb;
+}
+
+
 .nav-right a {
   margin-left: 20px;
   text-decoration: none;
   color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #61dafb;
 }
 
 /* Hero Section */
