@@ -47,6 +47,9 @@ body {
 
 /* Profile Image */
 .profile {
+  position: absolute;
+  left: 550px;
+  top: 120px;
   width: 300px;
   z-index: 2;
 }
