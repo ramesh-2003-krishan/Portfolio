@@ -39,10 +39,51 @@ export default function Home() {
 
       <section className="bar">
         <div className="animated-bar-container">
-          <div className="animated-bar">Ramesh</div>
+          <div className="animated-bar">
+           
+           <a href="https://github.com/ramesh-2003-krishan?tab=overview&from=2026-04-01&to=2026-04-07" target="_blank" rel="noopener noreferrer">
+            <img src="/logos/git.png" alt="Git"  className="logo" />
+            </a>
+            <img src="/logos/react.png" alt="React" className="logo" />
+            <img src="/logos/nodejs.png" alt="Node.js" className="logo" />
+            <img src="/logos/postman.png" alt="Postman" className="logo" />
+            <img src="/logos/docker.png" alt="Docker" className="logo" />
+            <img src="/logos/aws.svg" alt="AWS" className="logo" />
+            <img src="/logos/mongodb.png" alt="MongoDB" className="logo" />
+            <img src="/logos/php.png" alt="PHP" className="logo" />
+            <img src="/logos/mysql.svg" alt="mysql" className="logo" />
+            <img src="/logos/java.svg" alt="java" className="logo" />
+            <img src="/logos/javascript.svg" alt="javascript" className="logo" />
+            <img src="/logos/figma.svg" alt="Figma" className="logo" />
+            <img src="/logos/azure.png" alt="azure" className="logo" />
+
+            <a href="https://github.com/ramesh-2003-krishan?tab=overview&from=2026-04-01&to=2026-04-07" target="_blank" rel="noopener noreferrer">
+            <img src="/logos/git.png" alt="Git"  className="logo" />
+            </a>
+            <img src="/logos/react.png" alt="React" className="logo" />
+            <img src="/logos/nodejs.png" alt="Node.js" className="logo" />
+            <img src="/logos/postman.png" alt="Postman" className="logo" />
+            <img src="/logos/docker.png" alt="Docker" className="logo" />
+            <img src="/logos/aws.svg" alt="AWS" className="logo" />
+            <img src="/logos/mongodb.png" alt="MongoDB" className="logo" />
+            <img src="/logos/php.png" alt="PHP" className="logo" />
+            <img src="/logos/mysql.svg" alt="mysql" className="logo" />
+            <img src="/logos/java.svg" alt="java" className="logo" />
+            <img src="/logos/javascript.svg" alt="javascript" className="logo" />
+            <img src="/logos/figma.svg" alt="Figma" className="logo" />
+            <img src="/logos/azure.png" alt="azure" className="logo" />
+
+            
+          </div>
         </div>
       </section>
 
+      <section className="about">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
+        </p>
+        </section>
     </div>
   );
 }
