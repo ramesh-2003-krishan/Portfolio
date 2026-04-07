@@ -103,10 +103,9 @@ This project is deployed using:
 
 ## 📞 Contact
 
-* GitHub: https://github.com/your-username
-* LinkedIn: https://linkedin.com/in/your-profile
-* Fiverr: *(your Fiverr link)*
-* Email: [your-email@example.com](mailto:your-email@example.com)
+* GitHub: https://github.com/ramesh-2003-krishan
+* LinkedIn: www.linkedin.com/in/ramesh-krishan-8b8274320
+* Email: sudarshanakrishan123@gmail.com
 
 ---
 
