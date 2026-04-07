@@ -1,6 +1,8 @@
 import '../style/Home.css';
 
 export default function Home() {
+
+
   return (
     <div className="home-page">
       <nav className="navbar">
@@ -32,9 +34,15 @@ export default function Home() {
         </div>
         <div className="img">
             <img src="/assests/mine.png" alt="Ramesh" className="profile" />
-        </div>
-        
+        </div> 
       </section>
+
+      <section className="bar">
+        <div className="animated-bar-container">
+          <div className="animated-bar">Ramesh</div>
+        </div>
+      </section>
+
     </div>
   );
 }

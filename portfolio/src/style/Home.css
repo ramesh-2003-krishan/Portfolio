@@ -164,6 +164,7 @@ body {
   z-index: 2;
   background: linear-gradient(135deg, #ff006e, #61dafb);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -194,6 +195,7 @@ body {
   z-index: 2;
    background: linear-gradient(135deg, #ff006e, #61dafb);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -316,5 +318,36 @@ body {
   }
   50% {
     box-shadow: 0 0 60px rgba(97, 218, 251, 0.6), 0 0 120px rgba(255, 0, 110, 0.4);
+  }
+}
+
+.animated-bar-container {
+  bottom: 0;
+  left: 0;
+  width: 100% ;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 5px;
+  position: relative;
+  background: linear-gradient(90deg, #61dafb, #ff006e, #61dafb);
+  border: 1px solid rgba(97, 218, 251, 0.2); 
+  backdrop-filter: blur(5px);
+}
+
+.animated-bar {
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  
+  animation:moveBar 10s linear infinite;
+}
+
+@keyframes moveBar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
   }
 }
