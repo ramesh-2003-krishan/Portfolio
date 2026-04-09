@@ -1,13 +1,37 @@
 import '../style/Home.css';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [isLightMode, setIsLightMode] = useState(false);
 
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      setIsLightMode(true);
+      document.body.classList.add('light-mode');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setIsLightMode(!isLightMode);
+    if (!isLightMode) {
+      document.body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.body.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    }
+  };
 
   return (
+    <>
     <div className="home-page">
       <nav className="navbar">
         <div className="nav-left">Home</div>
         <div className="nav-right">
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {isLightMode ? '🌙' : '☀️'}
+          </button>
           <a href="#">About Me</a>
           <a href="#">Education</a>
           <a href="#">Skills</a>
@@ -77,13 +101,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <section className="about">
-        <h2>About Me</h2>
-        <p>
-          I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
-        </p>
-        </section>
+      
+      <section className="aboutme">
+        <div className="about">
+          <h2 className="about-title">Who am I</h2>
+          <p>
+            I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
+          </p>
+        </div>
+      </section>
+      
     </div>
+
+    </>
   );
 }
