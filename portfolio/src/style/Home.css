@@ -700,7 +700,7 @@ body {
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
-  margin-left: 625px;
+  margin-left: 650px;
    transition: all 0.3s ease;
 }
 
@@ -721,7 +721,7 @@ body {
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
-  margin-left: 400px;
+  margin-left: 450px;
    transition: all 0.3s ease;
 }
 
@@ -737,12 +737,12 @@ body {
   padding: 30px;
   border: 1px solid var(--border-color);
   border-radius: 10px;
-  max-width: 350px;
+  max-width: 600px;
   max-height: 200px;
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
-   margin-left: 400px;
+   margin-left: 450px;
    transition: all 0.3s ease;
 }
 
@@ -763,7 +763,7 @@ body {
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
-   margin-left: 625px;
+   margin-left: 600px;
    transition: all 0.3s ease;
 }
 
@@ -784,3 +784,4 @@ body {
   font-size: 18px;
   transition: all 0.3s ease;
 }
+

@@ -187,21 +187,29 @@ export default function Home() {
             <p className="line"></p>
           </div>
           <div className="cards">
-            <div className="cardA">
+            <div>
+               <button className="cardA" onClick="toggleMenu()">
                 <img src="/logos/code.png" alt="code" className="logoo" />
                 <h4>Full stack Developing</h4>
+            </button>
             </div>
-            <div className="cardB">
+            <div>
+              <button className="cardB" onClick="toggleMenu()" >
               <img src="/logos/uiux.png" alt="ui" className="logoo" />
               <h4>UI/UX design</h4>
+            </button>
             </div>
-            <div className="cardC">
+            <div>
+              <button className="cardC" onClick="toggleMenu()">
               <img src="/logos/data.png" alt="data" className="logoo" />
               <h4>Data Analysing</h4>
+            </button>
             </div>
-            <div className="cardD">
-              <img src="/logos/gamedev.png" alt="game" className="logoo" />
+            <div>
+              <button className="cardD" onClick="toggleMenu()">
+              <img src="/logos/gamedev.png" alt="data" className="logoo" />
               <h4>Game Developing and Animation</h4>
+            </button>
             </div>
           </div>
         </div>
