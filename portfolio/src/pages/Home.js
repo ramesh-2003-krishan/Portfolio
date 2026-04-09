@@ -187,10 +187,22 @@ export default function Home() {
             <p className="line"></p>
           </div>
           <div className="cards">
-            <div className="cardA">Full stack Developing</div>
-            <div className="cardB">UI/UX design</div>
-            <div className="cardC">Data Analysing</div>
-            <div className="cardD">Game Developing and Animation</div>
+            <div className="cardA">
+                <img src="/logos/code.png" alt="code" className="logoo" />
+                <h4>Full stack Developing</h4>
+            </div>
+            <div className="cardB">
+              <img src="/logos/uiux.png" alt="ui" className="logoo" />
+              <h4>UI/UX design</h4>
+            </div>
+            <div className="cardC">
+              <img src="/logos/data.png" alt="data" className="logoo" />
+              <h4>Data Analysing</h4>
+            </div>
+            <div className="cardD">
+              <img src="/logos/gamedev.png" alt="game" className="logoo" />
+              <h4>Game Developing and Animation</h4>
+            </div>
           </div>
         </div>
       </section>

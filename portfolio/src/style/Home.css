@@ -696,6 +696,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   max-width: 350px;
+   max-height: 200px;
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
@@ -716,6 +717,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   max-width: 350px;
+  max-height: 200px;
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
@@ -736,6 +738,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   max-width: 350px;
+  max-height: 200px;
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
@@ -756,6 +759,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   max-width: 350px;
+   max-height: 200px;
   margin: 40px auto;
   box-shadow: 0 8px 32px var(--shadow-color);
   align-items: flex-start;
@@ -768,4 +772,15 @@ body {
   text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
   background: var(--gradient-primary);
   
+}
+
+.logoo{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: contain;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
 }
