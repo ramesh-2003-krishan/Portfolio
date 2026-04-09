@@ -101,13 +101,43 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
+         
       <section className="aboutme">
         <div className="about">
-          <h2 className="about-title">Who am I</h2>
-          <p>
-            I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
-          </p>
+          <div>
+           <h2 className="who-title">Who Am I?</h2>
+           <p className="line"> </p>
+        </div>
+          <div className="card">
+            <div className="card-img">
+              <img src="/assests/webp.jpeg" alt="About Me" className="about-img" />
+            </div>
+            <div className="card-content">
+              <h2 className="about-title">About Me</h2>
+              <h3 className="about-subtitle">Ramesh's Details</h3>
+              <p className="about-desc">
+                I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
+              </p>
+              <div className="info-boxes">
+                <div className="info-box">
+                  <label>Name</label>
+                  <span>Ramesh</span>
+                </div>
+                <div className="info-box">
+                  <label>Email</label>
+                  <span>ramesh@example.com</span>
+                </div>
+                <div className="info-box">
+                  <label>Address</label>
+                  <span>Your Address</span>
+                </div>
+                <div className="info-box">
+                  <label>Phone No.</label>
+                  <span>+1 234 567 8900</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       
