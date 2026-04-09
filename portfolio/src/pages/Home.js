@@ -114,26 +114,42 @@ export default function Home() {
             </div>
             <div className="card-content">
               <h2 className="about-title">About Me</h2>
-              <h3 className="about-subtitle">Ramesh's Details</h3>
+              <h3 className="about-subtitle">My Details...</h3>
               <p className="about-desc">
-                I'm a passionate full-stack developer with a strong interest in AI and ML. I enjoy creating innovative solutions and learning new technologies to enhance my skills.
+                I’m a Software Engineering undergraduate at the University of Kelaniya who enjoys turning ideas into real-world applications. I have hands-on experience in building modern full-stack systems that are scalable and user-friendly. I enjoy and continuously improving my coding practices. My interests lie in Data Science, Machine Learning and Net-Centric Web Applications.
               </p>
               <div className="info-boxes">
                 <div className="info-box">
                   <label>Name</label>
-                  <span>Ramesh</span>
+                  <span>Ramesh Krishan Sudarshana</span>
                 </div>
                 <div className="info-box">
                   <label>Email</label>
-                  <span>ramesh@example.com</span>
+                  <span>sudarshanakrishan123@gmail.com</span>
                 </div>
                 <div className="info-box">
                   <label>Address</label>
-                  <span>Your Address</span>
+                  <span>56/1, Thalagalla, Nagollagama</span>
                 </div>
                 <div className="info-box">
                   <label>Phone No.</label>
-                  <span>+1 234 567 8900</span>
+                  <span>0702913026</span>
+                </div>
+                <div className="cv">
+                  <button className="cv-button" onClick={() => window.open('/CV.pdf', '_blank')}>
+                    Download CV
+                  </button>
+                </div>
+                <div className="llogo">
+                  <a href="https://github.com/ramesh-2003-krishan?tab=overview&from=2026-04-01&to=2026-04-07" target="_blank" rel="noopener noreferrer">
+                     <img src="/logos/git.png" alt="Git"  className="logos" />
+                 </a>
+                 <a href="https://www.linkedin.com/in/ramesh-krishan-8b8274320" target="_blank" rel="noopener noreferrer">
+                    <img src="/logos/linkedin.png" alt="LinkedIn"  className="logos" />
+                 </a>
+                 <a href="mailto:sudarshanakrishan123@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <img src="/logos/gmail.png" alt="Gmail"  className="logos" />
+                 </a>
                 </div>
               </div>
             </div>

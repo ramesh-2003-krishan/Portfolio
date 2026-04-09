@@ -469,7 +469,7 @@ body {
 }
 
 .about {
-  max-width: 800px;
+  max-width: 2000px;
   text-align: center;
 }
 
@@ -516,6 +516,17 @@ body {
   object-fit: cover;
   border-radius: 10px;
   overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.card-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
 }
 
 .card-img img {
@@ -542,6 +553,7 @@ body {
   font-size: 24px;
   color: var(--text-primary);
   margin-bottom: 10px;
+  margin-left: -600px;
 }
 
 .about-subtitle {
@@ -549,6 +561,7 @@ body {
   font-weight: bold;
   color: var(--text-primary);
   margin-bottom: 15px;
+  margin-left: -606px;
 }
 
 .about-desc {
@@ -556,6 +569,9 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 30px;
+  text-align: justify;
+  margin-left: 20px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .info-boxes {
@@ -565,11 +581,18 @@ body {
 }
 
 .info-box {
+  position: relative;
+  
   padding: 20px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
   background: var(--bg-accent);
+  z-index: 1;
+  transition: background 0.3s ease;
+ 
 }
+
+
 
 .info-box label {
   display: block;
@@ -583,4 +606,73 @@ body {
   font-size: 16px;
   color: var(--text-primary);
   font-weight: 500;
+}
+
+.info-box::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  background: var(--gradient-primary);
+  transition: width 0.5s ease;
+}
+
+.info-box:hover::before{
+  width: 100%;
+}
+
+.info-box:hover{
+  background: white;
+}
+
+
+
+.cv-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--text-primary);
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: -800px;
+  margin-top: -700px;
+}
+
+.cv-button:hover{
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.llogo{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  margin-left: -75px;
+  
+}
+
+.logos{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.logos:hover{
+  transform: scale(1.25);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
 }
