@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isLightMode, setIsLightMode] = useState(false);
-  const [open,setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(null);
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
@@ -23,8 +23,8 @@ export default function Home() {
     }
   };
 
-  function toggleMenu(){
-    setOpen(!open);
+  function toggleMenu(menuId){
+    setOpenMenu(openMenu === menuId ? null : menuId);
   }
 
   
@@ -171,52 +171,52 @@ export default function Home() {
           </div>
           <div className="cards">
             <div>
-               <button className="cardA" onClick={toggleMenu}>
+               <button className="cardA" onClick={() => toggleMenu('A')}>
                 <img src="/logos/code.png" alt="code" className="logoo" />
                 <h4>Full stack Developing</h4>
                </button>
-              <div className={`sub-menu ${open ? "active" : ""}`}>
-                 <img src="/logos/java.svg" alt="java" className="logo" />
-                 <img src="/logos/javascript.svg" alt="javascript" className="logo" />
-                 <img src="/logos/react.png" alt="React" className="logo" />
-                 <img src="/logos/mongodb.png" alt="MongoDB" className="logo" />
-                 <img src="/logos/azure.png" alt="azure" className="logo" />
-                 <img src="/logos/spring.svg" alt="spring" className="logo" />
+              <div className={`sub-menu ${openMenu === 'A' ? "active" : ""}`}>
+                 <img src="/logos/java.svg" alt="java" className="loggo" />
+                 <img src="/logos/javascript.svg" alt="javascript" className="loggo" />
+                 <img src="/logos/react.png" alt="React" className="loggo" />
+                 <img src="/logos/mongodb.png" alt="MongoDB" className="loggo" />
+                 <img src="/logos/azure.png" alt="azure" className="loggo" />
+                 <img src="/logos/spring.svg" alt="spring" className="loggo" />
              </div>
             </div>
 
             <div >
-              <button className="cardB" onClick={toggleMenu} >
+              <button className="cardB" onClick={() => toggleMenu('B')} >
               <img src="/logos/uiux.png" alt="ui" className="logoo" />
               <h4>UI/UX design</h4>
               </button>
-               <div className={`sub-menuB ${open ? "active" : ""}`}>
-                 <img src="/logos/figma.svg" alt="Figma" className="logo" />
-                 <img src="/logos/adobe.svg" alt="adobe" className="logo" />
-                 <img src="/logos/framer.png" alt="framer" className="logo" />
+               <div className={`sub-menuB ${openMenu === 'B' ? "active" : ""}`}>
+                 <img src="/logos/figma.svg" alt="Figma" className="loggo" />
+                 <img src="/logos/adobe.svg" alt="adobe" className="loggo" />
+                 <img src="/logos/framer.png" alt="framer" className="loggo" />
              </div>
             </div>
 
             <div>
-              <button className="cardC" onClick={toggleMenu}>
+              <button className="cardC" onClick={() => toggleMenu('C')}>
               <img src="/logos/data.png" alt="data" className="logoo" />
               <h4>Data Analysing</h4>            
               </button>
-              <div className={`sub-menuC ${open ? "active" : ""}`}>
-                 <img src="/logos/powerbi.png" alt="bi" className="logo" />
-                 <img src="/logos/spss.png" alt="spss" className="logo" />
+              <div className={`sub-menuC ${openMenu === 'C' ? "active" : ""}`}>
+                 <img src="/logos/powerbi.png" alt="bi" className="loggo" />
+                 <img src="/logos/spss.png" alt="spss" className="loggo" />
              </div>
             </div>
 
             <div>
-              <button className="cardD" onClick="toggleMenu()">
+              <button className="cardD" onClick={() => toggleMenu('D')}>
               <img src="/logos/gamedev.png" alt="data" className="logoo" />
               <h4>Game Developing and Animation</h4>
               </button>
-              <div className={`sub-menuD ${open ? "active" : ""}`}>
-                 <img src="/logos/unity.svg" alt="unity" className="logo" />
-                 <img src="/logos/unreal.svg" alt="unreal" className="logo" />
-                 <img src="/logos/blender.png" alt="blender" className="logo" />
+              <div className={`sub-menuD ${openMenu === 'D' ? "active" : ""}`}>
+                 <img src="/logos/unity.svg" alt="unity" className="loggo" />
+                 <img src="/logos/unreal.svg" alt="unreal" className="loggo" />
+                 <img src="/logos/blender.png" alt="blender" className="loggo" />
              </div>
             </div>
 
