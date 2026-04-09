@@ -497,7 +497,7 @@ body {
   border-radius: 2px;
 }
 
-.card {
+.cardd {
   display: flex;
   gap: 40px;
   padding: 30px;
@@ -675,4 +675,97 @@ body {
 .logos:hover{
   transform: scale(1.25);
   text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.skill-head{
+  justify-content: center;
+  margin-left: 640px;
+  font-size: 36px;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.cardB {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  max-width: 350px;
+  margin: 40px auto;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: flex-start;
+  margin-left: 625px;
+   transition: all 0.3s ease;
+}
+
+.cardB:hover{
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  background: var(--gradient-primary);
+}
+
+.cardA {
+   display: flex;
+  gap: 40px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  max-width: 350px;
+  margin: 40px auto;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: flex-start;
+  margin-left: 400px;
+   transition: all 0.3s ease;
+}
+
+.cardA:hover{
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  background: var(--gradient-primary);
+}
+
+.cardC {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  max-width: 350px;
+  margin: 40px auto;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: flex-start;
+   margin-left: 400px;
+   transition: all 0.3s ease;
+}
+
+.cardC:hover{
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  background: var(--gradient-primary);
+}
+
+.cardD {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  max-width: 350px;
+  margin: 40px auto;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: flex-start;
+   margin-left: 625px;
+   transition: all 0.3s ease;
+}
+
+.cardD:hover{
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  background: var(--gradient-primary);
+  
 }

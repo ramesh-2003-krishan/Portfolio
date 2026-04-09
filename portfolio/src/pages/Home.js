@@ -23,6 +23,29 @@ export default function Home() {
     }
   };
 
+  function App(){
+    useEffect(()=>{
+      const cards = document.querySelectorAll(".card");
+
+      const Observer = new IntersectionObserver(
+        (entries)=>{
+          entries.forEach((entry)=>{
+            if(entry.isIntersecting){
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        {
+          threshold:0.2,
+        }
+      );
+      cards.forEach((card)=>{
+        Observer.observe(card);
+      });
+    },
+  []);
+  }
+
   return (
     <>
     <div className="home-page">
@@ -33,7 +56,7 @@ export default function Home() {
             {isLightMode ? '🌙' : '☀️'}
           </button>
           <a href="#">About Me</a>
-          <a href="#">Education</a>
+          
           <a href="#">Skills</a>
           <a href="#">Projects</a>
           <a href="#">Contact</a>
@@ -108,7 +131,7 @@ export default function Home() {
            <h2 className="who-title">Who Am I?</h2>
            <p className="line"> </p>
         </div>
-          <div className="card">
+          <div className="cardd">
             <div className="card-img">
               <img src="/assests/webp.jpeg" alt="About Me" className="about-img" />
             </div>
@@ -153,6 +176,21 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="skills">
+        <div className="skill">
+          <div className="skill-tit">
+            <h2 className="skill-head">Skills</h2>
+            <p className="line"></p>
+          </div>
+          <div className="cards">
+            <div className="cardA">Full stack Developing</div>
+            <div className="cardB">UI/UX design</div>
+            <div className="cardC">Data Analysing</div>
+            <div className="cardD">Game Developing and Animation</div>
           </div>
         </div>
       </section>
