@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function Home() {
   const [isLightMode, setIsLightMode] = useState(false);
-
+  const [open,setOpen] = useState(false);
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
@@ -23,28 +23,11 @@ export default function Home() {
     }
   };
 
-  function App(){
-    useEffect(()=>{
-      const cards = document.querySelectorAll(".card");
-
-      const Observer = new IntersectionObserver(
-        (entries)=>{
-          entries.forEach((entry)=>{
-            if(entry.isIntersecting){
-              entry.target.classList.add("show");
-            }
-          });
-        },
-        {
-          threshold:0.2,
-        }
-      );
-      cards.forEach((card)=>{
-        Observer.observe(card);
-      });
-    },
-  []);
+  function toggleMenu(){
+    setOpen(!open);
   }
+
+  
 
   return (
     <>
@@ -188,29 +171,55 @@ export default function Home() {
           </div>
           <div className="cards">
             <div>
-               <button className="cardA" onClick="toggleMenu()">
+               <button className="cardA" onClick={toggleMenu}>
                 <img src="/logos/code.png" alt="code" className="logoo" />
                 <h4>Full stack Developing</h4>
-            </button>
+               </button>
+              <div className={`sub-menu ${open ? "active" : ""}`}>
+                 <img src="/logos/java.svg" alt="java" className="logo" />
+                 <img src="/logos/javascript.svg" alt="javascript" className="logo" />
+                 <img src="/logos/react.png" alt="React" className="logo" />
+                 <img src="/logos/mongodb.png" alt="MongoDB" className="logo" />
+                 <img src="/logos/azure.png" alt="azure" className="logo" />
+                 <img src="/logos/spring.svg" alt="spring" className="logo" />
+             </div>
             </div>
-            <div>
-              <button className="cardB" onClick="toggleMenu()" >
+
+            <div >
+              <button className="cardB" onClick={toggleMenu} >
               <img src="/logos/uiux.png" alt="ui" className="logoo" />
               <h4>UI/UX design</h4>
-            </button>
+              </button>
+               <div className={`sub-menuB ${open ? "active" : ""}`}>
+                 <img src="/logos/figma.svg" alt="Figma" className="logo" />
+                 <img src="/logos/adobe.svg" alt="adobe" className="logo" />
+                 <img src="/logos/framer.png" alt="framer" className="logo" />
+             </div>
             </div>
+
             <div>
-              <button className="cardC" onClick="toggleMenu()">
+              <button className="cardC" onClick={toggleMenu}>
               <img src="/logos/data.png" alt="data" className="logoo" />
-              <h4>Data Analysing</h4>
-            </button>
+              <h4>Data Analysing</h4>            
+              </button>
+              <div className={`sub-menuC ${open ? "active" : ""}`}>
+                 <img src="/logos/powerbi.png" alt="bi" className="logo" />
+                 <img src="/logos/spss.png" alt="spss" className="logo" />
+             </div>
             </div>
+
             <div>
               <button className="cardD" onClick="toggleMenu()">
               <img src="/logos/gamedev.png" alt="data" className="logoo" />
               <h4>Game Developing and Animation</h4>
-            </button>
+              </button>
+              <div className={`sub-menuD ${open ? "active" : ""}`}>
+                 <img src="/logos/unity.svg" alt="unity" className="logo" />
+                 <img src="/logos/unreal.svg" alt="unreal" className="logo" />
+                 <img src="/logos/blender.png" alt="blender" className="logo" />
+             </div>
             </div>
+
           </div>
         </div>
       </section>
