@@ -97,7 +97,8 @@ This project is deployed using:
 
 ## 📸 Screenshots
 
-*(Add your screenshots here)*
+![Screenshot_11-4-2026_0284_localhost](https://github.com/user-attachments/assets/60e6dc06-a16a-4cae-8570-e8a57de93179)
+
 
 ---
 
