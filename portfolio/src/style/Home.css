@@ -711,7 +711,7 @@ body {
 
 .skill-head {
   justify-content: center;
-  margin-left: 840px;
+  margin-left: 700px;
   font-size: 36px;
   font-weight: bold;
   background: var(--gradient-primary);
@@ -906,7 +906,7 @@ body {
 
 .project-title {
   font-size: 36px;
-  margin-left: 620px;
+  margin-left: 700px;
   font-weight: bold;
   background: var(--gradient-primary);
   -webkit-background-clip: text;
