@@ -62,16 +62,16 @@ export default function Home() {
           <div className="nav-left">
             <img src="/ramesh.ico" alt="ico" className="logo" />
           </div>
-          <div className="nav-right">
-            <button className="theme-toggle" onClick={toggleTheme}>
-              {isLightMode ? '🌙' : '☀️'}
-            </button>
+          <div className="nav-center">
             <a href="#">Home</a>
             <a href="#">About Me</a>
             <a href="#">Skills</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
           </div>
+          <button className="theme-toggle" onClick={toggleTheme}>
+            {isLightMode ? '🌙' : '☀️'}
+          </button>
         </nav>
 
         <section className="hero">
