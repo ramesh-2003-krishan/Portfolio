@@ -210,7 +210,7 @@ body {
 /* Profile Image */
 .profile {
   position: absolute;
-  left: 700px;
+  left: 400px;
   top: 130px;
   width: 300px;
   z-index: 2;
