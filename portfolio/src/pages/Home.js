@@ -5,6 +5,23 @@ export default function Home() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [openMenu, setOpenMenu] = useState(null);
   const videoRef = useRef(null);
+  const contactRef = useRef(null);
+  const [contactVisible, setContactVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setContactVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (contactRef.current) {
+      observer.observe(contactRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -42,13 +59,15 @@ export default function Home() {
     <>
       <div className="home-page">
         <nav className="navbar">
-          <div className="nav-left">Home</div>
+          <div className="nav-left">
+            <img src="/ramesh.ico" alt="ico" className="logo" />
+          </div>
           <div className="nav-right">
             <button className="theme-toggle" onClick={toggleTheme}>
               {isLightMode ? '🌙' : '☀️'}
             </button>
+            <a href="#">Home</a>
             <a href="#">About Me</a>
-
             <a href="#">Skills</a>
             <a href="#">Projects</a>
             <a href="#">Contact</a>
@@ -323,6 +342,46 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="contact">
+          <div className="contact-section">
+            <div>
+              <h2 className="contact-title">Contact</h2>
+              <p className="line"> </p>
+            </div>
+            <div className="contact-info">
+              <div>
+                <p className="liine"></p>
+              </div>
+              <div ref={contactRef} className="typing-wrapper">
+                <p className={`word ${contactVisible ? 'typewriter' : ''}`}>
+                Hire Me your 
+                </p>
+                <p className={`wword ${contactVisible ? 'typewriter-delayed' : ''}`}>
+                Next Project!
+                </p>
+             </div>
+             <div className="contact-links">
+                <p className="cname">Name: Ramesh Krishan Sudarshana</p>
+                <p className="cemail">Gmail: sudarshanakrishan@gmail.com</p>
+                <p className="cphone">Phone: 0702913026</p>
+                <div className="ogo">
+                    <a href="https://github.com/ramesh-2003-krishan?tab=overview&from=2026-04-01&to=2026-04-07" target="_blank" rel="noopener noreferrer">
+                      <img src="/logos/git.png" alt="Git" className="logs" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/ramesh-krishan-8b8274320" target="_blank" rel="noopener noreferrer">
+                      <img src="/logos/linkedin.png" alt="LinkedIn" className="logs" />
+                    </a>
+                    <a href="mailto:sudarshanakrishan123@gmail.com" target="_blank" rel="noopener noreferrer">
+                      <img src="/logos/gmail.png" alt="Gmail" className="logs" />
+                    </a>
+                  </div>
+             </div>
+          </div>
+        </div>
+        </section>
+
+
 
       </div>
 

@@ -899,8 +899,8 @@ body {
 
 .project-cards {
   position: relative;
-  min-height: 1200px; 
- 
+  min-height: 1200px;
+
 }
 
 .project-card {
@@ -926,7 +926,7 @@ body {
 }
 
 .projectB-wrapper {
-  top: 100px; 
+  top: 100px;
 }
 
 .projectC-wrapper {
@@ -1099,7 +1099,7 @@ body {
   color: var(--text-secondary);
   line-height: 1.6;
   text-align: justify;
-  
+
 }
 
 .features {
@@ -1109,7 +1109,7 @@ body {
   padding-left: 20px;
 }
 
-.lllogo{
+.lllogo {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -1123,8 +1123,160 @@ body {
   transition: all 0.3s ease;
   z-index: 10;
 }
- 
+
 .lllogo:hover {
   transform: scale(1.25);
   text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.contact {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+
+}
+
+.line {
+  width: 3px;
+  height: 40px;
+  background: var(--gradient-primary);
+  margin: 20px auto;
+  border-radius: 2px;
+}
+
+.contact-title {
+  font-size: 36px;
+  font-weight: bold;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  margin-left: 375px;
+
+}
+
+
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: 900px;
+  max-width: 100%;
+}
+
+.liine {
+  width: 3px;
+  height: 250px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.word {
+  font-size: 72px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.wword {
+  font-size: 50px;
+  font-weight: bold;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.cname,
+.cemail,
+.cphone {
+  font-size: 18px;
+  color: var(--text-primary);
+  font-style: italic;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.logs{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: contain;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-left: -100px;
+}
+
+.logs:hover {
+  transform: scale(1.25);
+  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing-first 5s steps(50, end) infinite;
+  max-width: 0;
+  vertical-align: bottom;
+}
+
+.typewriter-delayed {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing-second 5s steps(50, end) infinite;
+  max-width: 0;
+  vertical-align: bottom;
+}
+
+@keyframes typing-first {
+  0%   { max-width: 0; }
+  30%  { max-width: 500px; }
+  90%  { max-width: 500px; }
+  95%  { max-width: 0; }
+  100% { max-width: 0; }
+}
+
+@keyframes typing-second {
+  0%   { max-width: 0; }
+  30%  { max-width: 0; }
+  60%  { max-width: 500px; }
+  90%  { max-width: 500px; }
+  95%  { max-width: 0; }
+  100% { max-width: 0; }
+}
+
+.ogo{
+   display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  margin-left: 60px;
+}
+
+.typing-wrapper {
+  width: 450px;
+  flex-shrink: 0;
 }
