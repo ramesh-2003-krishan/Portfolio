@@ -1298,3 +1298,9 @@ body {
   width: 450px;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
