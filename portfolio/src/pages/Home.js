@@ -264,18 +264,44 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+
               <div className="project-cardx projectB-wrapper">
                 <div className="projectB">
                   <h4 className="projectB-title">UniEVE</h4>
                   <p className="projectB-desc">Ui for university event mobile application</p>
+                  <div className="projectB-img">
+                    <div className="projectA-img">
+                    <video ref={videoRef} autoPlay loop muted controls playsInline className="card-video">
+                      <source src={process.env.PUBLIC_URL + "/video/fvid.mp4"} type="video/mp4" />
+                    </video>
+                    <div className="fghub-desc">
+                      <p className="video-desc">UniEVE UI project is a modern and user-friendly interface designed for a smooth and interactive user experience. It focuses on clean layout design, easy navigation, and responsive components to improve usability across different screens.</p>
+                      <ul className="features">
+                        <li className="features">Clean and modern UI design</li>
+                        <li className="features">Responsive layout for different screen sizes</li>
+                        <li className="features">Simple and smooth navigation flow</li>
+                        <li className="features">Well-structured sections for better user interaction</li>
+                        <li className="features">Focused on usability and user experience (UX)</li>
+                      </ul>
+                    </div>
+                      <a href="https://www.figma.com/design/ui3kdurtO0xxwSPIIttVzh/Mini-Design?node-id=3-32&t=xRcmVREZEg4MYMOT-1" target="_blank" rel="noopener noreferrer">
+                       <img src="/logos/figma.svg" alt="Figma" className="llogo" />
+                      </a>
+                  </div>
+                  </div>
                 </div>
               </div>
+
+
               <div className="project-cardx projectC-wrapper">
                 <div className="projectC">
                   <h4 className="projectC-title">Portfolio</h4>
                   <p className="projectC-desc">Personal portfolio website showcasing my work and skills</p>
                 </div>
               </div>
+
+
             </div>
           </div>
         </section>
