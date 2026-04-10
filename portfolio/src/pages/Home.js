@@ -259,7 +259,7 @@ export default function Home() {
                       </ul>
                     </div>
                     <a href="https://github.com/ramesh-2003-krishan/FGhub" target="_blank" rel="noopener noreferrer">
-                       <img src="/logos/git.png" alt="Git" className="llogo" />
+                       <img src="/logos/git.png" alt="Git" className="lllogo" />
                     </a>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function Home() {
                       </ul>
                     </div>
                       <a href="https://www.figma.com/design/ui3kdurtO0xxwSPIIttVzh/Mini-Design?node-id=3-32&t=xRcmVREZEg4MYMOT-1" target="_blank" rel="noopener noreferrer">
-                       <img src="/logos/figma.svg" alt="Figma" className="llogo" />
+                       <img src="/logos/figma.svg" alt="Figma" className="lllogo" />
                       </a>
                   </div>
                   </div>
@@ -298,6 +298,24 @@ export default function Home() {
                 <div className="projectC">
                   <h4 className="projectC-title">Portfolio</h4>
                   <p className="projectC-desc">Personal portfolio website showcasing my work and skills</p>
+                  <div className="projectA-img">
+                    <video ref={videoRef} autoPlay loop muted controls playsInline className="card-video">
+                      <source src={process.env.PUBLIC_URL + "/video/pvid.mp4"} type="video/mp4" />
+                    </video>
+                    <div className="fghub-desc">
+                      <p className="video-desc">This is my personal portfolio website built to showcase my skills, projects, and experience as a Software Engineering undergraduate. It serves as a professional online presence for recruiters and clients to learn more about me and easily connect with me.</p>
+                      <ul className="features">
+                        <li className="features">Built using React.js with modern UI/UX design</li>
+                        <li className="features">Fully responsive and mobile-friendly layout</li>
+                        <li className="features">Clean and professional interface for better user experience</li>
+                        <li className="features">Deployed using Vercel / Netlify for live access</li>
+                        <li className="features">Designed to highlight my development journey and abilities</li>
+                      </ul>
+                    </div>
+                    <a href="https://github.com/ramesh-2003-krishan/Portfolio" target="_blank" rel="noopener noreferrer">
+                       <img src="/logos/git.png" alt="Git" className="lllogo" />
+                    </a>
+                  </div>
                 </div>
               </div>
 
