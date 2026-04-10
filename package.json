@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "start": "cd portfolio && npm start",
+    "build": "cd portfolio && npm run build",
+    "test": "cd portfolio && npm test"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^4.2.2"
+  }
+}
