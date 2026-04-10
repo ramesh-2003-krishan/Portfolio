@@ -223,6 +223,35 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="projects">
+        <div className="project">
+          <div>
+            <h2 className="project-title">Projects</h2>
+            <p className="line"></p>
+          </div>
+          <div className="project-cards">
+            <div className="project-cardx projectA-wrapper">
+              <div className="projectA">
+                <h4 className="projectA-title">FGhub</h4>
+                <p className="projectA-desc">Game and films management platform and sharepoint</p>
+              </div>
+            </div>
+            <div className="project-cardx projectB-wrapper">
+              <div className="projectB">
+                <h4 className="projectB-title">UniEVE</h4>
+                <p className="projectB-desc">Ui for university event mobile application</p>
+              </div>
+            </div>
+            <div className="project-cardx projectC-wrapper">
+              <div className="projectC">
+                <h4 className="projectC-title">Portfolio</h4>
+                <p className="projectC-desc">Personal portfolio website showcasing my work and skills</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </div>
 
