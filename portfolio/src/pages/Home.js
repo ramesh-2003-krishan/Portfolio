@@ -63,18 +63,18 @@ export default function Home() {
             <img src="/ramesh.ico" alt="ico" className="logo" />
           </div>
           <div className="nav-center">
-            <a href="#">Home</a>
-            <a href="#">About Me</a>
-            <a href="#">Skills</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#hero">Home</a>
+            <a href="#aboutme">About Me</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
           </div>
           <button className="theme-toggle" onClick={toggleTheme}>
             {isLightMode ? '🌙' : '☀️'}
           </button>
         </nav>
 
-        <section className="hero">
+        <section id="hero" className="hero">
 
           <h1 className="title">HI, I'M RAMESH</h1>
 
@@ -136,7 +136,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="aboutme">
+        <section id="aboutme" className="aboutme">
           <div className="about">
             <div>
               <h2 className="who-title">Who Am I?</h2>
@@ -191,7 +191,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="skills">
+        <section id="skills" className="skills">
           <div className="skill">
             <div className="skill-tit">
               <h2 className="skill-head">Skills</h2>
@@ -252,7 +252,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="projects">
+        <section id="projects" className="projects">
           <div className="project">
             <div>
               <h2 className="project-title">Projects</h2>
@@ -343,7 +343,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="contact">
+        <section id="contact" className="contact">
           <div className="contact-section">
             <div>
               <h2 className="contact-title">Contact</h2>
