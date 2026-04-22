@@ -195,7 +195,7 @@ export default function Home() {
           <div className="skill">
             <div className="skill-tit">
               <h2 className="skill-head">Skills</h2>
-              <p className="line"></p>
+              <p className="linee"></p>
             </div>
             <div className="cards">
               <div>
@@ -337,6 +337,35 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              <div className="project-cardx projectB-wrapper">
+                <div className="projectB">
+                  <h4 className="projectB-title">A B.AREANA</h4>
+                  <p className="projectB-desc">2D browser game</p>
+                  <div className="projectB-img">
+                    <div className="projectA-img">
+                    <video ref={videoRef} autoPlay loop muted controls playsInline className="card-video">
+                      <source src={process.env.PUBLIC_URL + "/video/fvid.mp4"} type="video/mp4" />
+                    </video>
+                    <div className="fghub-desc">
+                      <p className="video-desc">ARCADE B.ARENA is a modern HTML5 Canvas arcade game built using JavaScript, HTML, and CSS. It offers a smooth and interactive gameplay experience where players control a paddle to bounce a ball, earn points, and progress through increasing difficulty levels. The game includes sound effects, background music, score tracking, and a responsive neon-style user interface for an engaging arcade experience..</p>
+                      <ul className="features">
+                        <li className="features">🟢 Modern neon-style Start Menu interface</li>
+                        <li className="features">🎮 Smooth paddle and ball physics gameplay</li>
+                        <li className="features">🎵 Background music with ON/OFF toggle option</li>
+                        <li className="features">🔊 Sound effects for hits and game over events</li>
+                        <li className="features">📈 Dynamic difficulty system (speed increases with level)</li>
+                      </ul>
+                    </div>
+                      <a href="https://www.figma.com/design/ui3kdurtO0xxwSPIIttVzh/Mini-Design?node-id=3-32&t=xRcmVREZEg4MYMOT-1" target="_blank" rel="noopener noreferrer">
+                       <img src="/logos/figma.svg" alt="Figma" className="lllogo" />
+                      </a>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+                
 
 
             </div>
