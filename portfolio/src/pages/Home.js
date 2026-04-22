@@ -345,7 +345,7 @@ export default function Home() {
                   <div className="projectB-img">
                     <div className="projectA-img">
                     <video ref={videoRef} autoPlay loop muted controls playsInline className="card-video">
-                      <source src={process.env.PUBLIC_URL + "/video/fvid.mp4"} type="video/mp4" />
+                      <source src={process.env.PUBLIC_URL + "/video/p5.mp4"} type="video/mp4" />
                     </video>
                     <div className="fghub-desc">
                       <p className="video-desc">ARCADE B.ARENA is a modern HTML5 Canvas arcade game built using JavaScript, HTML, and CSS. It offers a smooth and interactive gameplay experience where players control a paddle to bounce a ball, earn points, and progress through increasing difficulty levels. The game includes sound effects, background music, score tracking, and a responsive neon-style user interface for an engaging arcade experience..</p>
