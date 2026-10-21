@@ -1,0 +1,56 @@
+export const SKILL_CATEGORIES = [
+  {
+    id: 'A',
+    cardClass: 'cardA',
+    subMenuClass: 'sub-menu',
+    icon: '/logos/code.png',
+    iconAlt: 'code',
+    title: 'Full stack Developing',
+    subSkills: [
+      { name: 'java', src: '/logos/java.svg' },
+      { name: 'javascript', src: '/logos/javascript.svg' },
+      { name: 'React', src: '/logos/react.png' },
+      { name: 'MongoDB', src: '/logos/mongodb.png' },
+      { name: 'azure', src: '/logos/azure.png' },
+      { name: 'spring', src: '/logos/spring.svg' },
+    ],
+  },
+  {
+    id: 'B',
+    cardClass: 'cardB',
+    subMenuClass: 'sub-menuB',
+    icon: '/logos/uiux.png',
+    iconAlt: 'ui',
+    title: 'UI/UX design',
+    subSkills: [
+      { name: 'Figma', src: '/logos/figma.svg' },
+      { name: 'adobe', src: '/logos/adobe.svg' },
+      { name: 'framer', src: '/logos/framer.png' },
+    ],
+  },
+  {
+    id: 'C',
+    cardClass: 'cardC',
+    subMenuClass: 'sub-menuC',
+    icon: '/logos/data.png',
+    iconAlt: 'data',
+    title: 'Data Analysing',
+    subSkills: [
+      { name: 'bi', src: '/logos/powerbi.png' },
+      { name: 'spss', src: '/logos/spss.png' },
+    ],
+  },
+  {
+    id: 'D',
+    cardClass: 'cardD',
+    subMenuClass: 'sub-menuD',
+    icon: '/logos/gamedev.png',
+    iconAlt: 'data',
+    title: 'Game Developing and Animation',
+    subSkills: [
+      { name: 'unity', src: '/logos/unity.svg' },
+      { name: 'unreal', src: '/logos/unreal.svg' },
+      { name: 'blender', src: '/logos/blender.png' },
+    ],
+  },
+];

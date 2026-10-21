@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Ramesh Krishan Sudarshana - Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, high-performance personal portfolio built with React.js showcasing full-stack development, UI/UX design, machine learning interests, and interactive web projects.
 
-## Available Scripts
+**Live Site:** [portfolio-phi-ivory-19.vercel.app](https://portfolio-phi-ivory-19.vercel.app/)
+
+---
+
+## 🚀 Features
+
+- **Responsive Design**: Flawless visual fidelity across Desktop (1920px, 1440px, 1280px), Tablet (768px - 1024px), and Mobile (390px - 640px).
+- **Theme Modes**: Seamless Dark and Light theme switcher with persistent localStorage memory.
+- **Interactive Tech Stack Marquee**: Continuous smooth animated ribbon displaying core technologies.
+- **Dynamic Skills Tree**: Interactive category cards that reveal technology badges on click with custom spatial animations.
+- **Sticky Stacked Project Showcase**: Video-featured interactive portfolio cards demonstrating real-world applications (FGhub, UniEVE, Portfolio, and ARCADE B.ARENA).
+- **Typewriter Contact Section**: Intersection-triggered typewriter effect with quick contact details and verified social links.
+- **Accessibility (a11y)**: Semantic HTML landmarks, clear aria-labels, focus-visible outlines, and respect for `prefers-reduced-motion`.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Core**: React 19, JavaScript (ES6+)
+- **Styling**: Vanilla CSS with CSS Custom Properties / Variables for dark and light themes
+- **Build System**: Create React App (`react-scripts 5.0.1`)
+- **Deployment**: Vercel
+
+---
+
+## 📁 Project Structure
+
+```text
+portfolio/
+├── baseline/                  # Baseline screenshots across 5 viewports
+├── public/
+│   ├── assests/               # Profile portrait assets
+│   ├── logos/                 # Tech and platform logo SVGs/PNGs
+│   ├── video/                 # High-definition demo recordings for projects
+│   ├── CV.pdf                 # Curated downloadable resume
+│   ├── index.html             # HTML shell with meta tags & favicon
+│   └── ramesh.ico             # Custom monogram favicon
+├── src/
+│   ├── components/
+│   │   ├── cards/             # Reusable card components (SkillCard, ProjectCard)
+│   │   ├── common/            # Common layout components (Navbar)
+│   │   └── sections/          # Dedicated page sections (Hero, Marquee, About, Skills, Projects, Contact)
+│   ├── data/                  # Decoupled content & configuration
+│   │   ├── navigation.js      # Nav anchor routes
+│   │   ├── personalInfo.js    # Contact, bio, and personal details
+│   │   ├── projects.js        # Project descriptions, features, and video paths
+│   │   ├── skills.js          # Skill hierarchies and badges
+│   │   ├── socialLinks.js     # External profile links
+│   │   └── techLogos.js       # Infinite banner technology logos
+│   ├── hooks/                 # Custom React hooks (useTheme, useInView, useMediaQuery, useReducedMotion)
+│   ├── pages/
+│   │   └── Home.js            # Main home page orchestrating sections
+│   ├── style/
+│   │   └── Home.css           # Core styling, animations, and responsive media queries
+│   ├── App.js                 # Root React component
+│   └── index.js               # React DOM entry point
+└── package.json
+```
+
+---
+
+## 💻 Available Scripts
 
 In the project directory, you can run:
 
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the app in development mode at [http://localhost:3000](http://localhost:3000). The page will reload when you make edits.
 
 ### `npm run build`
+Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for best performance.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm test`
+Launches the test runner in interactive watch mode.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📄 License & Attribution
+Designed & developed by Ramesh Krishan Sudarshana. All rights reserved.
