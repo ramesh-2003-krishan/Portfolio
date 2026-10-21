@@ -1217,105 +1217,189 @@ body {
   text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
 }
 
+/* ==========================================================================
+   Contact Section Redesign (Split-Card Visual + Form)
+   ========================================================================== */
+
 .contact {
-  min-height: 30vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 20px;
+  padding: 80px 20px;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
-.line {
-  width: 3px;
-  height: 40px;
-  background: var(--gradient-primary);
-  margin: 20px auto;
-  border-radius: 2px;
+.contact-card-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-.contact-title {
-  font-size: 36px;
-  font-weight: bold;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: all 0.3s ease;
-  margin-left: 375px;
-
+/* Rounded Split Card (Desktop 1024px+ side-by-side 50/50) */
+.split-contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0f0f26;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(124, 58, 237, 0.15);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.light-mode .split-contact-card {
+  background: #ffffff;
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: 0 20px 60px rgba(79, 70, 229, 0.12), 0 4px 20px rgba(0, 0, 0, 0.05);
+}
 
-.contact-info {
+.split-card-left {
   display: flex;
-  align-items: center;
-  gap: 40px;
-  width: 900px;
-  max-width: 100%;
+  height: 100%;
 }
 
+.split-card-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT PANEL (Visual): Gradients, 3D CSS Spheres, Waves, Typewriter & Socials
+   -------------------------------------------------------------------------- */
+
+.visual-panel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  min-height: 640px;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 45%, #a855f7 75%, #ec4899 100%);
+  color: #ffffff;
+}
+
+.visual-atmosphere {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.visual-glow-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.28), transparent 60%);
+}
+
+/* 3D Glowing Spheres (Pure CSS with radial gradients & lighting depth) */
+.visual-sphere {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.visual-sphere.sphere-large {
+  width: 320px;
+  height: 320px;
+  left: 12%;
+  top: 24%;
+  background: radial-gradient(circle at 35% 30%, #e0c3fc 0%, #a855f7 32%, #6d28d9 70%, #3b0764 100%);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4),
+              inset -18px -18px 40px rgba(0, 0, 0, 0.45),
+              inset 18px 18px 35px rgba(255, 255, 255, 0.55);
+  filter: drop-shadow(0 0 35px rgba(168, 85, 247, 0.45));
+}
+
+.visual-sphere.sphere-small {
+  width: 75px;
+  height: 75px;
+  left: 10%;
+  top: 20%;
+  background: radial-gradient(circle at 35% 30%, #fdf4ff 0%, #c084fc 35%, #7e22ce 75%, #4c1d95 100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35),
+              inset -6px -6px 15px rgba(0, 0, 0, 0.35),
+              inset 8px 8px 18px rgba(255, 255, 255, 0.65);
+  filter: drop-shadow(0 0 18px rgba(192, 132, 252, 0.4));
+}
+
+/* Subtle Wave / Dune Shape along Bottom of Visual Panel */
+.visual-dune-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  pointer-events: none;
+}
+
+.dune-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Foreground Content inside Visual Panel */
+.visual-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 48px 44px;
+}
+
+.visual-typewriter-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.visual-line-container {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Vertical Gradient Accent Bar (.liine) */
 .liine {
-  width: 3px;
-  height: 250px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
+  width: 4px;
+  height: 170px;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
+.visual-typing {
+  width: 100%;
+  max-width: 420px;
+  flex-shrink: 0;
+}
+
+/* Typewriter Typography (.word & .wword) */
 .word {
-  font-size: 72px;
-  font-weight: bold;
+  font-size: 44px;
+  font-weight: 800;
   font-family: 'Times New Roman', Times, serif;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  text-align: justify;
+  color: #ffffff;
+  line-height: 1.25;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
+  margin-bottom: 6px;
 }
 
 .wword {
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 34px;
+  font-weight: 700;
   font-style: italic;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  text-align: justify;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-left: auto;
-}
-
-.cname,
-.cemail,
-.cphone {
-  font-size: 18px;
-  color: var(--text-primary);
-  font-style: italic;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-family: 'Times New Roman', Times, serif;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-.logs{
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  object-fit: contain;
-  color: var(--text-primary);
-  font-weight: bold;
-  font-size: 18px;
-  transition: all 0.3s ease;
-  margin-left: -100px;
-}
-
-.logs:hover {
-  transform: scale(1.25);
-  text-shadow: 0 0 20px rgba(97, 218, 251, 0.5);
+  color: #fdf2f8;
+  line-height: 1.3;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.35);
 }
 
 .typewriter {
@@ -1353,101 +1437,21 @@ body {
   100% { max-width: 0; }
 }
 
-.ogo{
-   display: flex;
-  flex-direction: row;
-  gap: 40px;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  height: 100%;
-  text-align: center;
-  margin-left: 60px;
-}
-
-.typing-wrapper {
-  width: 450px;
-  flex-shrink: 0;
-}
-
-/* ==========================================================================
-   Contact Section Enhancements (Phase 3 Upgrade)
-   ========================================================================== */
-
-/* Ambient Drifting Background Orbs */
-.contact-ambient-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.contact-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  pointer-events: none;
-  opacity: 0.55;
-}
-
-.contact-orb.orb-1 {
-  width: 320px;
-  height: 320px;
-  background: radial-gradient(circle, rgba(97, 218, 251, 0.22), transparent 70%);
-  top: 5%;
-  left: 2%;
-}
-
-.contact-orb.orb-2 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 0, 110, 0.18), transparent 70%);
-  bottom: 5%;
-  right: 5%;
-}
-
-.contact-orb.orb-3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, rgba(0, 123, 255, 0.15), transparent 70%);
-  top: 35%;
-  left: 42%;
-}
-
-.light-mode .contact-orb.orb-1 {
-  background: radial-gradient(circle, rgba(0, 123, 255, 0.15), transparent 70%);
-}
-
-.light-mode .contact-orb.orb-2 {
-  background: radial-gradient(circle, rgba(40, 167, 69, 0.12), transparent 70%);
-}
-
-.light-mode .contact-orb.orb-3 {
-  background: radial-gradient(circle, rgba(255, 193, 7, 0.1), transparent 70%);
-}
-
-/* Typewriter Carets */
+/* Blinking Typewriter Caret */
 .typewriter-caret {
   display: inline-block;
   font-weight: 300;
-  color: #61dafb;
+  color: #ffffff;
   margin-left: 3px;
   vertical-align: baseline;
   animation: blink-caret 0.8s infinite;
   user-select: none;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
 }
 
 @keyframes blink-caret {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .caret-soft-fade {
@@ -1455,210 +1459,736 @@ body {
 }
 
 @keyframes fade-out-caret {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
-/* Subtle Shimmer Sweep on Headings after typing */
-.typewriter-shimmer,
-.shimmer-text-span {
-  background: linear-gradient(
-    90deg,
-    var(--text-secondary) 0%,
-    var(--text-secondary) 35%,
-    #61dafb 50%,
-    var(--text-secondary) 65%,
-    var(--text-secondary) 100%
-  );
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer-text 5s ease-in-out infinite;
+/* Visual Author & Socials (.cname, .ogo, .logs) */
+.visual-social-section {
+  margin-top: auto;
+  padding-top: 36px;
 }
 
-.light-mode .typewriter-shimmer,
-.light-mode .shimmer-text-span {
-  background: linear-gradient(
-    90deg,
-    var(--text-secondary) 0%,
-    var(--text-secondary) 35%,
-    #007bff 50%,
-    var(--text-secondary) 65%,
-    var(--text-secondary) 100%
-  );
-  background-size: 250% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer-text 5s ease-in-out infinite;
+.cname.visual-cname {
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
 }
 
-@keyframes shimmer-text {
-  0% {
-    background-position: 180% center;
-  }
-  100% {
-    background-position: -180% center;
-  }
-}
-
-/* Glassmorphism Tilt Card for Contact Details */
-.tilt-card-container {
-  position: relative;
-  perspective: 1000px;
-  border-radius: 18px;
-}
-
-.contact-card-glass {
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid var(--border-color);
-  border-radius: 18px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  padding: 30px 40px;
-  box-shadow: 0 12px 36px var(--shadow-color);
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.light-mode .contact-card-glass {
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(0, 123, 255, 0.22);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
-}
-
-.tilt-spotlight {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  border-radius: 18px;
-  transition: opacity 0.3s ease;
-  z-index: 0;
-}
-
-/* Contact Details Micro-Interactions & Click-To-Copy */
-.copy-contact-item-wrapper {
-  position: relative;
-  display: inline-flex;
+.ogo.visual-ogo {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
   align-items: center;
-  margin: 6px 0;
-  max-width: fit-content;
+  width: auto;
+  margin-left: 0;
 }
 
-.copy-contact-link {
-  display: inline-flex;
-  align-items: center;
+.visual-social-link {
   position: relative;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  padding: 2px 0;
-  transition: color 0.3s ease;
-}
-
-.copy-contact-link:hover {
-  color: #61dafb;
-}
-
-.light-mode .copy-contact-link:hover {
-  color: #007bff;
-}
-
-.copy-underline {
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.copy-contact-item-wrapper:hover .copy-underline {
-  width: 100%;
-}
-
-.copied-tooltip {
-  position: absolute;
-  left: calc(100% + 14px);
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--gradient-primary);
-  color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  padding: 3px 9px;
-  border-radius: 999px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-  pointer-events: none;
-  white-space: nowrap;
-  z-index: 20;
-}
-
-/* Social Icon Micro-Interactions, Brand Glows, & Tooltips */
-.social-icon-anchor {
-  position: relative;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
 }
 
-.glow-git:hover .logs {
-  filter: drop-shadow(0 0 10px rgba(97, 218, 251, 0.85));
+.visual-social-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
-.glow-linkedin:hover .logs {
-  filter: drop-shadow(0 0 10px rgba(0, 119, 181, 0.95));
+.visual-social-link .logs {
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+  object-fit: contain;
+  margin-left: 0;
+  filter: brightness(0) invert(1);
+  transition: transform 0.25s ease;
 }
 
-.glow-gmail:hover .logs {
-  filter: drop-shadow(0 0 10px rgba(234, 67, 53, 0.95));
+.visual-social-link:hover .logs {
+  transform: scale(1.15);
 }
 
-.social-tooltip {
+.visual-social-tooltip {
   position: absolute;
   bottom: 125%;
   left: 50%;
   transform: translate(-50%, 6px);
   font-size: 11px;
   font-weight: 600;
-  background: rgba(10, 10, 26, 0.92);
+  background: rgba(15, 15, 38, 0.95);
   color: #ffffff;
-  padding: 3px 8px;
+  padding: 4px 8px;
   border-radius: 6px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease, transform 0.2s ease;
   z-index: 30;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
-.social-icon-anchor:hover .social-tooltip {
+.visual-social-link:hover .visual-social-tooltip {
   opacity: 1;
   transform: translate(-50%, 0);
 }
 
-.light-mode .social-tooltip {
-  background: rgba(255, 255, 255, 0.95);
-  color: #212529;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+/* --------------------------------------------------------------------------
+   RIGHT PANEL (Form): Header, Tiles, Chips, 2-Col Grid, Validations & Submit
+   -------------------------------------------------------------------------- */
+
+.contact-form-panel {
+  padding: 48px 46px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
 }
+
+.light-mode .contact-form-panel {
+  color: #1f2937;
+}
+
+/* Form Header (.contact-title, .line) */
+.contact-form-header {
+  margin-bottom: 24px;
+}
+
+.contact-title.form-main-title {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 6px 0;
+  background: none;
+  -webkit-text-fill-color: initial;
+  background-clip: unset;
+  color: inherit;
+}
+
+.line.form-header-line {
+  display: none;
+}
+
+.contact-subtitle {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.light-mode .contact-subtitle {
+  color: #6b7280;
+}
+
+/* Contact Option Tiles Row (.cname, .cemail, .cphone) */
+.contact-tiles-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.contact-tile-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 14px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: #e5e7eb;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  min-height: 82px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-tile-btn:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+.light-mode .contact-tile-btn {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #374151;
+}
+
+.light-mode .contact-tile-btn:hover {
+  border-color: #c7d2fe;
+}
+
+.tile-active-backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  z-index: 1;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+}
+
+.contact-tile-btn.is-selected {
+  border-color: #6366f1;
+  color: #ffffff !important;
+}
+
+.tile-content-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tile-icon-wrap {
+  margin-bottom: 8px;
+  display: inline-flex;
+  color: #a78bfa;
+  transition: color 0.2s ease;
+}
+
+.light-mode .tile-icon-wrap {
+  color: #6366f1;
+}
+
+.contact-tile-btn.is-selected .tile-icon-wrap {
+  color: #ffffff !important;
+}
+
+.tile-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.tile-value {
+  font-size: 12.5px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  font-style: normal;
+  font-family: inherit;
+  margin: 0;
+  color: inherit;
+}
+
+.contact-tile-btn:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Topic Chips */
+.topic-chips-section {
+  margin-bottom: 24px;
+}
+
+.topic-chips-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: inherit;
+}
+
+.topic-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.topic-chip-pill {
+  position: relative;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.topic-chip-pill:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  color: #ffffff;
+}
+
+.light-mode .topic-chip-pill {
+  border-color: #e5e7eb;
+  color: #4b5563;
+  background: #ffffff;
+}
+
+.light-mode .topic-chip-pill:hover {
+  border-color: #a5b4fc;
+  color: #4338ca;
+}
+
+.chip-active-backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6366f1, #7c3aed);
+  z-index: 1;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.35);
+}
+
+.topic-chip-pill.is-selected {
+  border-color: #6366f1;
+  color: #ffffff !important;
+}
+
+.chip-text-inner {
+  position: relative;
+  z-index: 2;
+}
+
+.topic-chip-pill:focus-visible {
+  outline: 2px solid #8b5cf6;
+  outline-offset: 2px;
+}
+
+/* Form Fields & 2-Column Grid on Desktop */
+.contact-actual-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-grid-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.form-column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-column-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-field-label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.required-star {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.form-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  color: #9ca3af;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.form-input-container.is-textarea .input-icon {
+  top: 16px;
+  transform: none;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border-radius: 12px;
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: #ffffff;
+  font-size: 13.5px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #6b7280;
+}
+
+.form-input:focus {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+.light-mode .form-input {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  color: #111827;
+}
+
+.light-mode .form-input::placeholder {
+  color: #9ca3af;
+}
+
+.light-mode .form-input:focus {
+  background: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.form-input:focus ~ .input-icon,
+.form-input-container:focus-within .input-icon {
+  color: #8b5cf6;
+}
+
+.light-mode .form-input:focus ~ .input-icon,
+.light-mode .form-input-container:focus-within .input-icon {
+  color: #6366f1;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 188px;
+}
+
+.input-valid-indicator {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #10b981;
+  display: inline-flex;
+}
+
+.form-input-container.is-textarea .input-valid-indicator {
+  top: 16px;
+  transform: none;
+}
+
+.field-has-error .form-input {
+  border-color: #ef4444 !important;
+}
+
+.form-field-error {
+  font-size: 12px;
+  color: #ef4444;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Alerts for Success / Error */
+.form-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+.light-mode .alert-success {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.alert-error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #f87171;
+}
+
+.light-mode .alert-error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.alert-icon-wrap {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.alert-text strong {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.alert-text p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.alert-retry-btn {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.alert-retry-btn:hover {
+  opacity: 0.8;
+}
+
+/* Submit Button */
+.form-submit-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+.contact-submit-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 36px;
+  border-radius: 999px;
+  border: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  background: linear-gradient(135deg, #6366f1 0%, #7c3aed 50%, #ec4899 100%);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+  outline: none;
+  min-height: 48px;
+  transition: box-shadow 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+  box-shadow: 0 14px 32px rgba(124, 58, 237, 0.45);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.contact-submit-btn:focus-visible {
+  outline: 3px solid #8b5cf6;
+  outline-offset: 3px;
+}
+
+.submit-btn-shine {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.contact-submit-btn:hover .submit-btn-shine {
+  transform: translateX(100%);
+}
+
+.submit-btn-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.submit-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.contact-submit-btn:hover .submit-arrow-icon {
+  transform: translateX(3px);
+}
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (Below 1024px & Below 640px)
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .split-contact-card {
+    grid-template-columns: 1fr;
+    border-radius: 20px;
+  }
+
+  .visual-panel {
+    min-height: 280px;
+    height: auto;
+  }
+
+  .visual-content {
+    padding: 26px 24px;
+  }
+
+  .visual-typewriter-block {
+    margin-top: 0;
+    gap: 14px;
+  }
+
+  .liine {
+    height: 80px;
+    width: 3px;
+  }
+
+  .word {
+    font-size: clamp(22px, 4vw, 30px);
+    margin-bottom: 4px;
+  }
+
+  .wword {
+    font-size: clamp(18px, 3.2vw, 24px);
+  }
+
+  .visual-cname {
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+
+  .visual-social-section {
+    padding-top: 10px;
+    margin-top: 16px;
+  }
+
+  .visual-social-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .visual-sphere.sphere-large {
+    width: 180px;
+    height: 180px;
+    top: 15%;
+    left: 25%;
+  }
+
+  .visual-sphere.sphere-small {
+    width: 45px;
+    height: 45px;
+    top: 10%;
+    left: 15%;
+  }
+
+  .contact-form-panel {
+    padding: 36px 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact {
+    padding: 40px 14px;
+  }
+
+  .contact-form-panel {
+    padding: 28px 16px;
+  }
+
+  .contact-title.form-main-title {
+    font-size: 26px;
+  }
+
+  .contact-tiles-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .form-grid-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .form-textarea {
+    min-height: 140px;
+  }
+
+  .topic-chips-row {
+    gap: 8px;
+  }
+
+  .topic-chip-pill {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .contact-submit-btn {
+    width: 100%;
+  }
+}
+
 
 @media (max-width: 768px) {
   .container {
@@ -1973,31 +2503,6 @@ button:focus-visible {
     text-align: center;
     white-space: normal;
   }
-
-  .contact-card-glass {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto;
-    padding: 24px 20px;
-  }
-
-  .contact-links {
-    margin-left: 0;
-    align-items: center;
-    width: 100%;
-  }
-
-  .ogo {
-    margin-left: 0;
-    width: 100%;
-    justify-content: center;
-    gap: 25px;
-    margin-top: 10px;
-  }
-
-  .logs {
-    margin-left: 0;
-  }
 }
 
 @media (max-width: 640px) {
@@ -2040,16 +2545,5 @@ button:focus-visible {
 
   .animated-bar {
     gap: 60px;
-  }
-
-  .contact-card-glass {
-    padding: 20px 16px;
-  }
-
-  .copied-tooltip {
-    left: auto;
-    right: 0;
-    top: -24px;
-    transform: none;
   }
 }
