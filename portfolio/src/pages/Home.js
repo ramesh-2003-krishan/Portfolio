@@ -5,6 +5,7 @@ import Navbar from '../components/common/Navbar';
 import HeroSection from '../components/sections/HeroSection';
 import TechMarquee from '../components/sections/TechMarquee';
 import AboutSection from '../components/sections/AboutSection';
+import ExperienceSection from '../components/experience/ExperienceSection';
 import SkillsSection from '../components/sections/SkillsSection';
 import ProjectsSection from '../components/sections/ProjectsSection';
 import ContactSection from '../components/sections/ContactSection';
@@ -24,6 +25,7 @@ export default function Home() {
         <HeroSection />
         <TechMarquee />
         <AboutSection />
+        <ExperienceSection />
         <SkillsSection openMenu={openMenu} toggleMenu={toggleMenu} />
         <ProjectsSection />
         <ContactSection />

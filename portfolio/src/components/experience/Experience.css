@@ -1,0 +1,694 @@
+/* ==========================================================================
+   EXPERIENCE SECTION - Glassmorphism Vertical Timeline
+   Inherits design language and CSS variables from the redesigned About Me section.
+   ========================================================================== */
+
+.experience-section {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(50px, 6vw, 80px) clamp(20px, 4vw, 50px) clamp(25px, 3.5vw, 40px);
+  background: var(--bg-accent);
+  border-top: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+}
+
+.experience-container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   AMBIENT BACKGROUND ORBS
+   ========================================================================== */
+.experience-ambient-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.experience-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(85px);
+  pointer-events: none;
+}
+
+.experience-orb-1 {
+  top: 20%;
+  left: 5%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.12), transparent 70%);
+}
+
+.experience-orb-2 {
+  bottom: 15%;
+  right: 5%;
+  width: 460px;
+  height: 460px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.09), transparent 70%);
+}
+
+.light-mode .experience-orb-1 {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.08), transparent 70%);
+}
+
+.light-mode .experience-orb-2 {
+  background: radial-gradient(circle, rgba(40, 167, 69, 0.07), transparent 70%);
+}
+
+/* ==========================================================================
+   SECTION HEADING
+   ========================================================================== */
+.experience-heading-wrap {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 65px);
+  position: relative;
+}
+
+.experience-eyebrow-wrapper {
+  margin-bottom: 8px;
+}
+
+.experience-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(0.75rem, 0.95vw, 0.85rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #61dafb;
+  background: rgba(97, 218, 251, 0.1);
+  padding: 5px 14px;
+  border-radius: 30px;
+  border: 1px solid rgba(97, 218, 251, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.light-mode .experience-eyebrow {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.08);
+  border-color: rgba(0, 123, 255, 0.25);
+}
+
+.experience-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.experience-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 10px 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.experience-heading-line {
+  margin: 12px auto 0;
+  width: 64px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  transform-origin: center center;
+}
+
+/* ==========================================================================
+   VERTICAL TIMELINE
+   ========================================================================== */
+.experience-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Base Track Line */
+.timeline-track-base {
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 20px;
+  width: 3px;
+  background: rgba(97, 218, 251, 0.15);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.light-mode .timeline-track-base {
+  background: rgba(0, 123, 255, 0.15);
+}
+
+.timeline-track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(97, 218, 251, 0.6);
+}
+
+.light-mode .timeline-track-fill {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Timeline Item (Dot + Card) */
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(20px, 3.5vw, 36px);
+  padding-left: 0;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   TIMELINE DOT
+   ========================================================================== */
+.timeline-dot-wrapper {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 18px;
+}
+
+.timeline-dot-ripple {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(97, 218, 251, 0.2);
+  border: 1px solid rgba(97, 218, 251, 0.4);
+  animation: dotRipple 2.8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.light-mode .timeline-dot-ripple {
+  background: rgba(0, 123, 255, 0.15);
+  border-color: rgba(0, 123, 255, 0.35);
+}
+
+@keyframes dotRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.timeline-dot-pip {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid #61dafb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 14px rgba(97, 218, 251, 0.6);
+  z-index: 2;
+}
+
+.light-mode .timeline-dot-pip {
+  border-color: #007bff;
+  box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+}
+
+.timeline-dot-core {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+}
+
+/* ==========================================================================
+   EXPERIENCE GLASS CARD
+   ========================================================================== */
+.experience-card-outer {
+  flex: 1;
+  width: 100%;
+}
+
+.experience-card {
+  position: relative;
+  background: rgba(15, 15, 42, 0.55);
+  border: 1.5px solid rgba(97, 218, 251, 0.24);
+  border-radius: clamp(20px, 2.5vw, 26px);
+  padding: clamp(22px, 3.2vw, 36px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45),
+    0 0 25px rgba(97, 218, 251, 0.08),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(97, 218, 251, 0.45);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(97, 218, 251, 0.22),
+    inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.light-mode .experience-card {
+  background: rgba(255, 255, 255, 0.68);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.07),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+.light-mode .experience-card:hover {
+  border-color: rgba(0, 123, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1),
+    0 0 26px rgba(0, 123, 255, 0.18);
+}
+
+/* Card Spotlight Follower */
+.experience-card-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* ==========================================================================
+   CARD HEADER: Logo Badge, Role, Company, Status Badges
+   ========================================================================== */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 24px);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Company Logo Badge */
+.experience-logo-box {
+  width: clamp(56px, 6vw, 68px);
+  height: clamp(56px, 6vw, 68px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1.5px solid var(--border-color);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease;
+}
+
+.experience-card:hover .experience-logo-box {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 0 12px 24px rgba(97, 218, 251, 0.25);
+}
+
+.light-mode .experience-logo-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.light-mode .experience-card:hover .experience-logo-box {
+  box-shadow: 0 10px 22px rgba(0, 123, 255, 0.2);
+}
+
+.experience-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+/* Fallback Initial Glass Badge */
+.experience-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* Headings Group */
+.experience-title-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.experience-role-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.experience-role {
+  font-size: clamp(1.28rem, 2vw, 1.65rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.experience-company-wrap {
+  margin: 0;
+}
+
+.experience-company {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+/* Badges: Internship Pill + Current Status */
+.experience-badges-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.experience-type-pill {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(97, 218, 251, 0.12);
+  color: #61dafb;
+  border: 1px solid rgba(97, 218, 251, 0.28);
+}
+
+.light-mode .experience-type-pill {
+  background: rgba(0, 123, 255, 0.1);
+  color: #007bff;
+  border-color: rgba(0, 123, 255, 0.25);
+}
+
+.experience-current-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.current-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulseDot 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulseDot {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 1;
+    box-shadow: 0 0 12px #22c55e;
+  }
+}
+
+/* ==========================================================================
+   INFO CHIPS ROW (Date, Location, Work Mode)
+   ========================================================================== */
+.experience-chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.experience-info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.experience-info-chip:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border-color: rgba(97, 218, 251, 0.4);
+  transform: translateY(-2px);
+}
+
+.light-mode .experience-info-chip {
+  background: rgba(0, 0, 0, 0.035);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.light-mode .experience-info-chip:hover {
+  background: rgba(0, 123, 255, 0.08);
+  border-color: rgba(0, 123, 255, 0.3);
+}
+
+.info-chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #61dafb;
+}
+
+.light-mode .info-chip-icon {
+  color: #007bff;
+}
+
+/* Optional fields styling (when added in the future) */
+.experience-desc {
+  margin-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.experience-highlights {
+  margin: 14px 0 0 18px;
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.experience-skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.experience-skill-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(97, 218, 251, 0.08);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+/* Screen Reader Only Utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+
+/* Tablet & Mobile (< 1024px) */
+@media (max-width: 1023px) {
+  .experience-section {
+    padding: 40px 20px 25px;
+  }
+
+  .timeline-track-base {
+    left: 18px;
+  }
+
+  .timeline-dot-wrapper {
+    width: 38px;
+    height: 38px;
+    margin-top: 14px;
+  }
+
+  .timeline-item {
+    gap: 18px;
+  }
+}
+
+/* Mobile (< 640px) */
+@media (max-width: 639px) {
+  .experience-section {
+    padding: 32px 14px 20px;
+  }
+
+  .timeline-track-base {
+    left: 14px;
+  }
+
+  .timeline-dot-wrapper {
+    width: 30px;
+    height: 30px;
+    margin-top: 16px;
+  }
+
+  .timeline-item {
+    gap: 12px;
+  }
+
+  .experience-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .experience-header {
+    gap: 14px;
+    margin-bottom: 16px;
+    align-items: flex-start;
+  }
+
+  .experience-logo-box {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    margin-top: 2px;
+  }
+
+  .experience-role-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .experience-chips-row {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .experience-info-chip {
+    width: fit-content;
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    min-height: 44px; /* Ensure 44px minimum touch target */
+  }
+}
+
+/* Small mobile (390px) */
+@media (max-width: 400px) {
+  .experience-section {
+    padding: 28px 10px 15px;
+  }
+
+  .experience-card {
+    padding: 16px 14px;
+  }
+}
+
+/* ==========================================================================
+   PREFERS REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .experience-orb,
+  .timeline-dot-ripple,
+  .current-pulse-dot,
+  .experience-logo-box,
+  .experience-card {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .experience-card:hover {
+    transform: none !important;
+  }
+
+  .timeline-track-fill {
+    height: 100% !important;
+  }
+}

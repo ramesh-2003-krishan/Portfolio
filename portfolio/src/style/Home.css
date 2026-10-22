@@ -5,6 +5,10 @@
   font-family: 'Arial', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-primary: #0a0a1a;
   --bg-secondary: #0f0f2a;
@@ -134,12 +138,19 @@ body {
   transition: width 0.3s ease;
 }
 
-.nav-center a:hover {
+.nav-center a:hover,
+.nav-center a.active {
   color: #61dafb;
 }
 
-.nav-center a:hover::after {
+.nav-center a:hover::after,
+.nav-center a.active::after {
   width: 100%;
+}
+
+.light-mode .nav-center a:hover,
+.light-mode .nav-center a.active {
+  color: #007bff;
 }
 
 .nav-right a:hover::after {
@@ -2329,7 +2340,9 @@ button:focus-visible {
     order: 3;
     width: 100%;
     justify-content: center;
-    gap: 12px;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+    padding: 4px 0;
   }
 
   .nav-center a {
