@@ -688,7 +688,7 @@ body {
 
 .project-cards {
   position: relative;
-  min-height: 3200px;
+  min-height: 4800px;
 
 }
 
@@ -724,6 +724,14 @@ body {
 
 .projectD-wrapper {
   top: 120px;
+}
+
+.projectE-wrapper {
+  top: 150px;
+}
+
+.projectF-wrapper {
+  top: 180px;
 }
 
 .projectA {
@@ -833,6 +841,61 @@ body {
   background: var(--gradient-primary);
 }
 
+.projectE {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  cursor: pointer;
+
+  position: relative;
+  padding: 40px;
+  margin: 20px auto;
+  width: 900px;
+  height: 500px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin-left: 350px;
+  transition: all 0.3s ease;
+}
+
+.projectE:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #10b981 0%, #f59e0b 100%);
+  color: #ffffff;
+}
+
+.projectF {
+  background: var(--bg-accent);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  align-items: center;
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  cursor: pointer;
+
+  position: relative;
+  padding: 40px;
+  margin: 20px auto;
+  width: 900px;
+  height: 500px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin-left: 400px;
+  transition: all 0.3s ease;
+  z-index: 6;
+}
+
+.projectF:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  color: #ffffff;
+}
+
 
 .projectA {
   z-index: 1;
@@ -848,6 +911,10 @@ body {
 
 .projectD{
   z-index: 4;
+}
+
+.projectE {
+  z-index: 5;
 }
 
 .projectA-title {
@@ -904,6 +971,36 @@ body {
 }
 
 .projectD-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.projectE-title {
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.projectE-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.projectF-title {
+  font-size: 28px;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.projectF-desc {
   font-size: 16px;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -2149,7 +2246,9 @@ button:focus-visible {
   .projectA,
   .projectB,
   .projectC,
-  .projectD {
+  .projectD,
+  .projectE,
+  .projectF {
     width: 100% !important;
     max-width: 750px !important;
     margin: 0 auto !important;
@@ -2253,7 +2352,9 @@ button:focus-visible {
   .projectA,
   .projectB,
   .projectC,
-  .projectD {
+  .projectD,
+  .projectE,
+  .projectF {
     padding: 20px 15px !important;
   }
 
