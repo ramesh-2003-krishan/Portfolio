@@ -6,13 +6,44 @@ export const SKILL_CATEGORIES = [
     icon: '/logos/code.png',
     iconAlt: 'code',
     title: 'Full stack Developing',
+    entranceDirection: 'left',
     subSkills: [
-      { name: 'java', src: '/logos/java.svg' },
-      { name: 'javascript', src: '/logos/javascript.svg' },
-      { name: 'React', src: '/logos/react.png' },
-      { name: 'MongoDB', src: '/logos/mongodb.png' },
-      { name: 'azure', src: '/logos/azure.png' },
-      { name: 'spring', src: '/logos/spring.svg' },
+      {
+        name: 'java',
+        label: 'Java',
+        src: '/logos/java.svg',
+        desktopOffset: { x: -350, y: 0 },
+      },
+      {
+        name: 'javascript',
+        label: 'JavaScript',
+        src: '/logos/javascript.svg',
+        desktopOffset: { x: -275, y: 50 },
+      },
+      {
+        name: 'React',
+        label: 'React',
+        src: '/logos/react.png',
+        desktopOffset: { x: -200, y: -150 },
+      },
+      {
+        name: 'MongoDB',
+        label: 'MongoDB',
+        src: '/logos/mongodb.png',
+        desktopOffset: { x: -350, y: -125 },
+      },
+      {
+        name: 'azure',
+        label: 'Azure',
+        src: '/logos/azure.png',
+        desktopOffset: { x: -375, y: -50 },
+      },
+      {
+        name: 'spring',
+        label: 'Spring Boot',
+        src: '/logos/spring.svg',
+        desktopOffset: { x: -275, y: -150 },
+      },
     ],
   },
   {
@@ -22,10 +53,26 @@ export const SKILL_CATEGORIES = [
     icon: '/logos/uiux.png',
     iconAlt: 'ui',
     title: 'UI/UX design',
+    entranceDirection: 'right',
     subSkills: [
-      { name: 'Figma', src: '/logos/figma.svg' },
-      { name: 'adobe', src: '/logos/adobe.svg' },
-      { name: 'framer', src: '/logos/framer.png' },
+      {
+        name: 'Figma',
+        label: 'Figma',
+        src: '/logos/figma.svg',
+        desktopOffset: { x: 180, y: 0 },
+      },
+      {
+        name: 'adobe',
+        label: 'Adobe XD',
+        src: '/logos/adobe.svg',
+        desktopOffset: { x: 220, y: -70 },
+      },
+      {
+        name: 'framer',
+        label: 'Framer',
+        src: '/logos/framer.png',
+        desktopOffset: { x: 180, y: -125 },
+      },
     ],
   },
   {
@@ -35,9 +82,20 @@ export const SKILL_CATEGORIES = [
     icon: '/logos/data.png',
     iconAlt: 'data',
     title: 'Data Analysing',
+    entranceDirection: 'left',
     subSkills: [
-      { name: 'bi', src: '/logos/powerbi.png' },
-      { name: 'spss', src: '/logos/spss.png' },
+      {
+        name: 'bi',
+        label: 'Power BI',
+        src: '/logos/powerbi.png',
+        desktopOffset: { x: -350, y: 0 },
+      },
+      {
+        name: 'spss',
+        label: 'SPSS',
+        src: '/logos/spss.png',
+        desktopOffset: { x: -350, y: -100 },
+      },
     ],
   },
   {
@@ -47,10 +105,26 @@ export const SKILL_CATEGORIES = [
     icon: '/logos/gamedev.png',
     iconAlt: 'data',
     title: 'Game Developing and Animation',
+    entranceDirection: 'right',
     subSkills: [
-      { name: 'unity', src: '/logos/unity.svg' },
-      { name: 'unreal', src: '/logos/unreal.svg' },
-      { name: 'blender', src: '/logos/blender.png' },
+      {
+        name: 'unity',
+        label: 'Unity',
+        src: '/logos/unity.svg',
+        desktopOffset: { x: 250, y: 0 },
+      },
+      {
+        name: 'unreal',
+        label: 'Unreal Engine',
+        src: '/logos/unreal.svg',
+        desktopOffset: { x: 300, y: -50 },
+      },
+      {
+        name: 'blender',
+        label: 'Blender',
+        src: '/logos/blender.png',
+        desktopOffset: { x: 250, y: -100 },
+      },
     ],
   },
 ];

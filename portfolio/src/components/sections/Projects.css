@@ -1,0 +1,402 @@
+/* ==========================================================================
+   PROJECTS SECTION ANIMATIONS & MICRO-INTERACTIONS
+   Animation-only stylesheet. Does NOT change existing layout or positions.
+   ========================================================================== */
+
+.projects {
+  position: relative;
+  overflow: visible;
+}
+
+/* Background: Soft Blurred Ambient Orbs Drifting Behind Cards */
+.projects-ambient-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projects-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.projects-orb-1 {
+  top: 15%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(97, 218, 251, 0.12), transparent 70%);
+}
+
+.projects-orb-2 {
+  top: 50%;
+  right: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 0, 110, 0.1), transparent 70%);
+}
+
+.projects-orb-3 {
+  bottom: 12%;
+  left: 15%;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent 70%);
+}
+
+.light-mode .projects-orb-1 {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.07), transparent 70%);
+}
+
+.light-mode .projects-orb-2 {
+  background: radial-gradient(circle, rgba(40, 167, 69, 0.06), transparent 70%);
+}
+
+.light-mode .projects-orb-3 {
+  background: radial-gradient(circle, rgba(0, 123, 255, 0.06), transparent 70%);
+}
+
+/* Animated Gradient Underline below "Projects" */
+.project-line-wrap {
+  position: relative;
+}
+
+.project .line {
+  margin-left: 700px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  transform-origin: left center;
+}
+
+/* Inner Motion Wrapper for Stacking Depth & 3D Tilt */
+.project-depth-wrapper {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  will-change: transform, opacity, filter;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Stacking Depth Darkening Overlay (Gradually dims as covered) */
+.project-depth-dimmer {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: #000000;
+  pointer-events: none;
+  z-index: 8;
+  transition: opacity 0.2s ease;
+}
+
+/* Cursor Light Reflection / Spotlight Overlay */
+.project-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 7;
+  transition: opacity 0.25s ease;
+}
+
+/* Gradient Border Glow on Hover */
+.projectA:hover,
+.projectB:hover,
+.projectC:hover,
+.projectD:hover {
+  box-shadow: 0 16px 45px var(--shadow-color),
+    0 0 25px rgba(97, 218, 251, 0.25) !important;
+}
+
+.projectE:hover {
+  box-shadow: 0 16px 45px var(--shadow-color),
+    0 0 28px rgba(16, 185, 129, 0.35) !important;
+}
+
+.projectF:hover {
+  box-shadow: 0 16px 45px var(--shadow-color),
+    0 0 28px rgba(99, 102, 241, 0.35) !important;
+}
+
+.light-mode .projectA:hover,
+.light-mode .projectB:hover,
+.light-mode .projectC:hover,
+.light-mode .projectD:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1),
+    0 0 22px rgba(0, 123, 255, 0.2) !important;
+}
+
+.light-mode .projectE:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1),
+    0 0 24px rgba(245, 158, 11, 0.35) !important;
+}
+
+.light-mode .projectF:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1),
+    0 0 24px rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Video Container & Loading Skeleton */
+.project-video-container {
+  position: relative;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-video-container .card-video,
+.project-video-container .ccard-video {
+  width: 100% !important;
+  transition: opacity 0.4s ease;
+}
+
+.video-skeleton-loader {
+  position: absolute;
+  inset: 0;
+  height: 300px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.03) 100%
+  );
+  background-size: 200% 100%;
+  animation: videoSkeletonShimmer 1.8s infinite linear;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.light-mode .video-skeleton-loader {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.04) 0%,
+    rgba(0, 0, 0, 0.09) 50%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes videoSkeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Features List Item Hover Lift */
+.features li {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+}
+
+.features li:hover {
+  transform: translateX(4px);
+  color: var(--text-primary);
+}
+
+/* Project Link Icon (lllogo) Magnetic Wrap & Shine */
+.project-link-magnetic {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+.project-link-magnetic .lllogo {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative !important;
+}
+
+.project-link-shine {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.5s ease;
+}
+
+.project-link-magnetic:hover .project-link-shine {
+  left: 160%;
+}
+
+.project-link-magnetic:active .lllogo {
+  transform: scale(0.95);
+}
+
+.project-link-magnetic a:focus-visible {
+  outline: 2px solid #61dafb;
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   SIDE SCROLL PROGRESS INDICATOR (Desktop Only, Hidden < 768px)
+   ========================================================================== */
+
+.projects-scroll-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 8px;
+  border-radius: 30px;
+  background: rgba(15, 15, 42, 0.55);
+  border: 1px solid rgba(97, 218, 251, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease;
+  pointer-events: auto;
+}
+
+.light-mode .projects-scroll-indicator {
+  background: rgba(255, 255, 255, 0.75);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.projects-indicator-dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  outline: none;
+}
+
+.projects-indicator-dot:focus-visible {
+  outline: 2px solid #61dafb;
+  outline-offset: 2px;
+}
+
+.indicator-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  opacity: 0.45;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.projects-indicator-dot.active .indicator-pip {
+  width: 10px;
+  height: 18px;
+  border-radius: 10px;
+  background: var(--gradient-primary);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(97, 218, 251, 0.6);
+}
+
+.light-mode .projects-indicator-dot.active .indicator-pip {
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Tooltip on Indicator Hover */
+.indicator-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 4px 14px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.projects-indicator-dot:hover .indicator-tooltip,
+.projects-indicator-dot:focus-visible .indicator-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE OVERRIDES
+   ========================================================================== */
+
+/* Hide side indicator below 768px */
+@media (max-width: 767px) {
+  .projects-scroll-indicator {
+    display: none !important;
+  }
+}
+
+/* Center underline on smaller screens */
+@media (max-width: 1023px) {
+  .project .line {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .project-video-container {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   PREFERS REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .projects-orb,
+  .project-depth-wrapper,
+  .video-skeleton-loader,
+  .project-link-shine {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .projects-orb {
+    transform: none !important;
+    opacity: 0.08 !important;
+  }
+
+  .video-skeleton-loader {
+    display: none !important;
+  }
+
+  .project-depth-wrapper {
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
