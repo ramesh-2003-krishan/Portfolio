@@ -7,7 +7,7 @@
   position: relative;
   overflow: visible;
   z-index: 5;
-  padding: clamp(25px, 3.5vw, 45px) 20px clamp(60px, 8vw, 110px);
+  padding: clamp(25px, 3.5vw, 45px) 20px clamp(15px, 2vw, 30px);
   background: var(--bg-primary);
   transition: background 0.3s ease;
 }
@@ -83,6 +83,15 @@
 .skill-card-unit {
   position: relative;
   margin-bottom: 20px;
+}
+
+.skill-card-unit:last-child {
+  margin-bottom: 0;
+}
+
+.skill-card-unit:last-child .skills-sub-menu:not(.active) {
+  height: 0;
+  margin-top: 0;
 }
 
 .skills-card-btn {
@@ -437,7 +446,7 @@
 
 @media (max-width: 640px) {
   .skills {
-    padding: 25px 16px 50px;
+    padding: 25px 16px 20px;
   }
 
   .skills-card-btn {
